@@ -3,9 +3,9 @@
 
 """
 Simple Virus Total API
-Version: 0.1
-Autor: qwartz -> twitter: @qwartz_
-Github: https://github.com/qwartz/vtapi/
+version : 0.1
+ author : qwartz -> twitter: @qwartz_
+ github : https://github.com/qwartz/vtapi/
 """
 
 import sys, os
@@ -19,12 +19,15 @@ menu = {
 }
 
 def main():
-	banner()	
-	argv = sys.argv
-	if len(argv) > 1:
-		if argv[1] in menu: load(argv)
+	banner()
+	if vt.apikey != '':
+		argv = sys.argv
+		if len(argv) > 1:
+			if argv[1] in menu: load(argv)
+		else:
+			help()
 	else:
-		help()
+		print "E: An apikey is required, check file: API/virustotal.py (line: 17)"
 
 def load(argv):
 	option = menu[argv[1]]
@@ -46,6 +49,8 @@ def file(argv=False):
 			result = vt.report(sha256)
 			export(result, file)
 			format(result, file)
+		else:
+			print "E: file", colors.bold + file + colors.reset, "does not exist"
 
 if __name__ == '__main__':
 	main()
