@@ -1,7 +1,9 @@
 # vtapi
 Simple Virus Total API
 
-[![Screenshot-152249.png](https://s26.postimg.org/hzkyre87d/Screenshot-152249.png)](https://postimg.org/image/uqz4xwhz9/)
+## Demo:
+
+![demo_vtapi](https://media.giphy.com/media/d47I0oxXsBpRlg40/giphy.gif)
 
 ## Requirements:
 + API Key VirusTotal
@@ -16,4 +18,8 @@ self.apikey = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
 Start test:
 ```bash
 python vtapi.py -f test.bat
+```
+or
+```bash
+python vtapi.py -u https://google.com/
 ```

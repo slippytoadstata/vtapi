@@ -14,6 +14,7 @@ vt = VTAPI()
 
 menu = {
     '-f':'file',
+    '-u':'url',
     '-h':'help',
     '-v':'banner'
 }
@@ -48,15 +49,28 @@ def file(argv=False):
     else:
         file = argv[2]
         if os.path.exists(file):
-            print " [" + colors.green + "+" + colors.reset + "] Scan"
+            print " [" + colors.green + "+" + colors.reset + "] Scan file:", file
             result = vt.scan_file(file)
             sha256 = result['sha256']
             print " [" + colors.green + "+" + colors.reset + "] Report"
-            result = vt.report(sha256)
-            export(result, file)
-            format(result, file)
+            result = vt.report_file(sha256)
+            export(result)
+            format(result)
         else:
             print " E: file", colors.bold + file + colors.reset, "does not exist"
+
+def url(argv=False):
+    if argv == False:
+        print " E: A url address is required\n example: python vtapi.py -u https://www.google.com"
+    else:
+        url = argv[2]
+        print " [" + colors.green + "+" + colors.reset + "] Scan url:", url
+        result = vt.scan_url(url)
+        resource = result['resource']
+        print " [" + colors.green + "+" + colors.reset + "] Report"
+        result = vt.report_url(resource)
+        export(result)
+        format(result)
 
 if __name__ == '__main__':
     main()
