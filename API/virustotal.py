@@ -88,9 +88,8 @@ def abstract(data, graph, info):
     
     print """\n Detection ratio: {}/{} {}
  Analysis date: {}
- Permalink: {}
  + ------------------------------- +
- """.format(data['positives'], data['total'], graph, data['scan_date'], data['permalink'])
+ """.format(data['positives'], data['total'], graph, data['scan_date'])
         
 def export(data):
     name = data['scan_date']
