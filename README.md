@@ -7,6 +7,7 @@ Simple Virus Total API
 
 ## Requirements:
 + API Key VirusTotal
++ requests  `pip install requests`
 
 ## Use:
 Add key API:
