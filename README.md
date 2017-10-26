@@ -1,5 +1,5 @@
 # vtapi
-Simple Virus
+Simple Virus, watch Demo for info.
 
 ## Demo:
 
