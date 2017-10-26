@@ -1,5 +1,5 @@
 # vtapi
-Simple Virus Total API
+Simple Virus
 
 ## Demo:
 
